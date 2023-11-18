@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Orbitron';
+
 }
 
 body{
@@ -12,10 +14,33 @@ body{
     background: radial-gradient(#0a0043, #240034)
 }
 
+.verh{
+    color: #00b2a4;
+    font-family: 'Orbitron';
+    position: relative;
+    bottom: 1200px;
+    box-sizing: border-box;
+    font-size: 200px;
+    -webkit-text-stroke: 5px #000000;
+}
+
+.img{
+    position:absolute;
+    transform: scale(100%);
+}
+
 .cube{
     position: absolute;
     width: 600px;
-    height: 600px;
+    height: 60px;
+    transform: scale(150%)
+}
+
+.cubic{
+    position: absolute;
+    width: 600px;
+    height: 1500px;
+    transform:scale(90%);
 }
 
 .cube div{
@@ -27,7 +52,6 @@ body{
     animation: anim1 30s linear infinite;
     transform-style: preserve-3d;
     transform: rotateX(-20deg) rotateY(25deg);
-    transform: scale(75%);
 }
 .cubic div{
     position: absolute;
@@ -38,7 +62,6 @@ body{
     animation: anim2 30s linear infinite;
     transform-style: preserve-3d;
     transform: rotateX(-20deg) rotateY(25deg);
-    transform: scale(20%);
 }
 
 @keyframes anim1 {
@@ -73,9 +96,24 @@ body{
     transition: .5s;
 }
 
+.cubic .small span{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--clr);
+    transform-style: preserve-3d;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(300px);
+    transition: .5s;
+}
 .cube .big span{
     background: transparent;
-    border: 20px solid #5e0090;
+    border: 20px solid #9200c7;
+    box-shadow: 0px 0px 50px #ffffff;
+}
+
+.cubic .small span{
+    background: transparent;
+    border: 20px solid #020ecb;
     box-shadow: 0px 0px 50px #ffffff;
 }
 
@@ -84,7 +122,17 @@ div.cube div.big span.top{
     translateZ(300px);
 }
 
+div.cubic div.small span.top{
+    transform: rotateX(90deg)
+    translateZ(300px);
+}
+
 .cube .big .bottom{
+    transform: rotateX(90deg)
+    translateZ(-300px);
+}
+
+div.cubic div.small span.bottom{
     transform: rotateX(90deg)
     translateZ(-300px);
 }
@@ -98,12 +146,30 @@ div.cube div.big span.top{
     filter: blur(100px);
 }
 
+.cubic .small .top::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateZ(-650px);
+    background: rgba(0, 0, 0, 0.62);
+    filter: blur(100px);
+}
 .MyName{
     color: #110090;
-    font-family: 'Orbitron', sans-serif;
     position: relative;
-    left: 50%;
-    top: 50%;
+    left: 20%;
+    top: 46%;
     box-sizing: border-box;
-    font-size: 32px;
+    font-size: 72px;
+    -webkit-text-stroke: 2px #000000;
+}
+
+.Name2{
+    color: #a900c7;
+    position: relative;
+    left: 20%;
+    top: 46%;
+    box-sizing: border-box;
+    font-size: 72px;
+    -webkit-text-stroke: 2px #000000;
 }
